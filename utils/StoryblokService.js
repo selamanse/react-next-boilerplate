@@ -34,7 +34,7 @@ class StoryblokService {
   }
 
   initEditor(reactComponent) {
-    if (window.storyblok || this.devMode) {
+    if (window.storyblok) {
       window.storyblok.init({accessToken: this.token})
       window.storyblok.on(['change', 'published'], () => location.reload(true))
       window.storyblok.on('input', (event) => {
